@@ -480,6 +480,8 @@ function Gallery({ posts, selected, onToggleSelect, onDragStart }: { posts: Post
   const size = Math.floor((width - 16 - (cols - 1) * 8) / cols);
   const rows = Math.ceil(tiles.length / cols);
   const v = useVirtualizer({ count: rows, getScrollElement: () => parentRef.current, estimateSize: () => size + 8, overscan: 3 });
+  // Tile size depends on the measured width; re-measure rows when it changes.
+  useEffect(() => v.measure(), [v, size]);
   if (!tiles.length) return <div className="p-10 text-center text-zinc-500">No images or videos in this view.</div>;
   return (
     <div ref={parentRef} className="min-h-0 flex-1 overflow-y-auto p-2" data-testid="gallery">

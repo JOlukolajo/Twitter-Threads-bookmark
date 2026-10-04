@@ -30,7 +30,7 @@ const POPOVER_CSS = `
 .pop { position: fixed; z-index: 2147483647; width: 260px; max-height: 360px; display: flex; flex-direction: column;
   font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #0f1419; background: #fff;
   border: 1px solid rgba(0,0,0,.12); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,.18); overflow: hidden; }
-@media (prefers-color-scheme: dark) { .pop { color: #e7e9ea; background: #16181c; border-color: rgba(255,255,255,.14); } }
+.pop.dark { color: #e7e9ea; background: #16181c; border-color: rgba(255,255,255,.14); box-shadow: 0 8px 28px rgba(0,0,0,.6); }
 .hd { padding: 10px 12px 6px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
 .hd small { font-weight: 400; opacity: .6; }
 .list { overflow: auto; padding: 2px 4px; }
@@ -45,6 +45,17 @@ input[type=checkbox] { width: 16px; height: 16px; accent-color: #1d9bf0; margin:
 .ft button { width: 100%; background: transparent; color: inherit; opacity: .7; font-weight: 500; }
 .ft button:hover { opacity: 1; background: rgba(127,127,127,.12); }
 `;
+
+/** Follows the site's own theme (X and Threads have their own dark modes). */
+function pageIsDark(): boolean {
+  for (const el of [document.body, document.documentElement]) {
+    const m = getComputedStyle(el).backgroundColor.match(/\d+(\.\d+)?/g);
+    if (!m || (m.length === 4 && Number(m[3]) === 0)) continue;
+    const [r, g, b] = m.map(Number);
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b < 128;
+  }
+  return matchMedia('(prefers-color-scheme: dark)').matches;
+}
 
 export function startChips(rt: ContentRuntime, adapter: ChipAdapter): void {
   const platform: Platform = rt.platform;
@@ -84,7 +95,7 @@ export function startChips(rt: ContentRuntime, adapter: ChipAdapter): void {
     if (!host.isConnected) document.body.appendChild(host);
     pop?.remove();
     pop = document.createElement('div');
-    pop.className = 'pop';
+    pop.className = pageIsDark() ? 'pop dark' : 'pop';
     pop.innerHTML = `<div class="hd">Add to folder <small>Saveboard</small></div><div class="list"></div>
       <form class="new"><input placeholder="New folder…" maxlength="80" /><button type="submit">Add</button></form>
       <div class="ft"><button type="button" data-open>Open library</button></div>`;

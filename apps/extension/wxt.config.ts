@@ -27,6 +27,13 @@ export default defineConfig({
       ? { browser_specific_settings: { gecko: { id: 'saveboard@saveboard.app', strict_min_version: '128.0' } } }
       : {}),
   }),
+  zip: {
+    artifactTemplate: 'saveboard-{{version}}-{{browser}}.zip',
+    sourcesTemplate: 'saveboard-{{version}}-sources.zip',
+    // Firefox reviewers need the whole monorepo (the extension imports packages/core).
+    sourcesRoot: '../..',
+    excludeSources: ['**/node_modules/**', '**/.output/**', '**/.wxt/**', '**/test-results/**', 'store/assets/**', '.git/**'],
+  },
   vite: () => ({
     plugins: [tailwindcss()],
   }),

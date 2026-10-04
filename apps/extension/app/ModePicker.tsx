@@ -4,6 +4,7 @@ import { PlatformLogo, cx } from '@/components/ui';
 import { PLATFORM_CONFIG } from '@/lib/platforms';
 import { usePostCount, useSyncState, timeAgo } from './hooks';
 import { navigate } from './router';
+import { PermissionBanner } from './PermissionBanner';
 
 const ACCENT: Record<Platform, string> = {
   x: 'from-zinc-900 to-zinc-700 text-white dark:from-zinc-100 dark:to-zinc-300 dark:text-zinc-900',
@@ -41,7 +42,7 @@ function ModeCard({ platform }: { platform: Platform }) {
         </div>
         <div className="col-span-2 flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
           <span className={cx('h-2 w-2 rounded-full', connected ? 'bg-emerald-500' : 'bg-zinc-400')} />
-          {connected ? `Connected · seen ${timeAgo(sync?.lastSeenAt ?? sync?.lastSyncAt)}` : `Open ${PLATFORM_CONFIG[platform].homeUrl.replace('https://', '').replace(/\/$/, '')} while logged in`}
+          {connected ? `Connected · seen ${timeAgo(sync?.lastSeenAt ?? sync?.lastSyncAt)}` : `Not connected yet · open ${PLATFORM_CONFIG[platform].domain} while logged in`}
         </div>
       </div>
     </button>
@@ -60,6 +61,7 @@ export function ModePicker() {
           <SettingsIcon className="h-4 w-4" /> Settings
         </button>
       </header>
+      <PermissionBanner />
       <div className="grid gap-6 sm:grid-cols-2">
         {PLATFORMS.map((p) => (
           <ModeCard key={p} platform={p} />

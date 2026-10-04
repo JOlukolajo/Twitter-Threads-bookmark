@@ -7,6 +7,7 @@ export interface PlatformConfig {
   savedPageUrl: string;
   savedPathPrefix: string;
   homeUrl: string;
+  domain: string;
   savedLabel: string;
 }
 
@@ -16,6 +17,7 @@ export const PLATFORM_CONFIG: Record<Platform, PlatformConfig> = {
     savedPageUrl: 'https://x.com/i/bookmarks',
     savedPathPrefix: '/i/bookmarks',
     homeUrl: 'https://x.com/home',
+    domain: 'x.com',
     savedLabel: 'bookmarks',
   },
   threads: {
@@ -23,6 +25,7 @@ export const PLATFORM_CONFIG: Record<Platform, PlatformConfig> = {
     savedPageUrl: 'https://www.threads.com/saved',
     savedPathPrefix: '/saved',
     homeUrl: 'https://www.threads.com/',
+    domain: 'threads.com',
     savedLabel: 'saved posts',
   },
 };

@@ -1,5 +1,13 @@
 # Plan: Our own "Twillot" for X + Meta Threads
 
+> **Implementation status (MVP v0.1):**
+> - Phases 1–7 are implemented. Working name: **Saveboard** (set in `apps/extension/lib/brand.ts`).
+> - Tests:
+>   - 31 core unit tests (parsers, DB rules, sync engine, backup).
+>   - Playwright e2e against the built extension.
+> - Still open from Phase 0: capture *real* X and Threads responses to replace the synthetic fixtures, and verify the replay headers against the live sites.
+> - Design change from the original plan: the sync loop runs in the background worker. It replays requests through a tab of the site (not from the service worker), which avoids both cookie issues and timer throttling in background tabs.
+
 ## Context
 The repo (`JOlukolajo/Twitter-Threads-bookmark`) is empty except for a README. Goal: a **free, local-first browser extension** that collects your saved posts from **X (Twitter)** and **Meta Threads**, keeps them updated on its own, lets you sort them into folders, and downloads media (images and videos).
 

@@ -71,7 +71,8 @@ export const threadsContent: ContentPlatform = {
     rt.cache.add(posts);
 
     const name = threadsParser.threadsOperationName(c.requestBody) ?? c.requestHeaders['x-fb-friendly-name'] ?? '';
-    if (!onSaved() || !posts.length || NOT_SAVED.test(name)) return;
+    const savedQuery = /saved|bookmark/i.test(name);
+    if (!onSaved() || !posts.length || (!savedQuery && NOT_SAVED.test(name))) return;
 
     const vars = requestVars(c.requestBody);
     const cursor = vars[cursorKey(vars)];
