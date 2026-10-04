@@ -8,3 +8,6 @@ export * from './export';
 export * from './download';
 export * as xParser from './adapters/x/parse';
 export * as threadsParser from './adapters/threads/parse';
+export * from './sync-engine';
+export * from './adapters/x/replay';
+export * from './adapters/threads/replay';

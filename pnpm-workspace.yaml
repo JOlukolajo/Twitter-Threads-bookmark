@@ -4,3 +4,6 @@ packages:
 onlyBuiltDependencies:
   - esbuild
   - spawn-sync
+overrides:
+  # @vitejs/plugin-react 6 needs Vite 8; WXT ships Vite 7.
+  "@vitejs/plugin-react": "^5.1.0"
