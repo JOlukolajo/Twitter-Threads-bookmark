@@ -359,7 +359,7 @@ function FilterBar({ filters, setFilters }: { filters: PostFilters; setFilters: 
   return (
     <div className="flex flex-wrap items-center gap-2 border-b border-zinc-200 bg-zinc-50 px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900/50">
       <Input aria-label="Author" placeholder="@author" value={filters.author} onChange={(e) => setFilters((f) => ({ ...f, author: e.target.value }))} className="w-40" />
-      <Select aria-label="Media" value={filters.media} onChange={(e) => setFilters((f) => ({ ...f, media: e.target.value as PostFilters['media'] }))}>
+      <Select aria-label="Media type" value={filters.media} onChange={(e) => setFilters((f) => ({ ...f, media: e.target.value as PostFilters['media'] }))}>
         <option value="any">Any media</option>
         <option value="with-media">With media</option>
         <option value="image">Images</option>
