@@ -1,0 +1,4 @@
+{ "data": { "viewer": { "user_results": { "result": { "bookmark_collections_slice": {
+  "items": [ { "id": "1700000000000000001", "name": "Design" }, { "id": "1700000000000000002", "name": "Startups" } ],
+  "slice_info": {}
+} } } } } }

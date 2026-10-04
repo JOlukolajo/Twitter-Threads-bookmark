@@ -1,0 +1,39 @@
+{
+  "data": {
+    "xdt_text_app_saved_media": {
+      "edges": [
+        { "node": { "thread_items": [ { "post": {
+          "pk": "3400000000000000001", "id": "3400000000000000001_99", "code": "DAbcDEF1",
+          "taken_at": 1727000000, "like_count": 42, "media_type": 1,
+          "user": { "pk": "99", "username": "zuck", "full_name": "Mark", "is_verified": true, "profile_pic_url": "https://scontent.cdninstagram.com/p.jpg" },
+          "caption": { "text": "Hello Threads" },
+          "image_versions2": { "candidates": [
+            { "url": "https://scontent.cdninstagram.com/small.jpg", "width": 320, "height": 320 },
+            { "url": "https://scontent.cdninstagram.com/large.jpg", "width": 1440, "height": 1440 }
+          ] },
+          "text_post_app_info": { "direct_reply_count": 3, "share_info": { "quoted_post": {
+            "pk": "1", "code": "QUOTED1", "taken_at": 1726000000,
+            "user": { "username": "someone" }, "caption": { "text": "quoted text" }
+          } } }
+        } } ] } },
+        { "node": { "thread_items": [ { "post": {
+          "pk": "3400000000000000002", "code": "DAbcDEF2", "taken_at": 1727100000, "media_type": 8,
+          "user": { "pk": "100", "username": "mosseri" },
+          "caption": null,
+          "text_post_app_info": { "text_fragments": { "fragments": [ { "plaintext": "Carousel " }, { "plaintext": "post" } ] } },
+          "carousel_media": [
+            { "image_versions2": { "candidates": [ { "url": "https://scontent.cdninstagram.com/c1.jpg", "width": 1080, "height": 1080 } ] } },
+            { "image_versions2": { "candidates": [ { "url": "https://scontent.cdninstagram.com/c2poster.jpg", "width": 720, "height": 1280 } ] },
+              "video_versions": [ { "type": 101, "url": "https://scontent.cdninstagram.com/c2.mp4", "width": 720, "height": 1280 } ] }
+          ]
+        } } ] } },
+        { "node": { "thread_items": [ { "post": {
+          "pk": "3400000000000000003", "code": "DAbcDEF3", "taken_at": 1727200000,
+          "user": { "username": "textonly" }, "caption": { "text": "Just text" },
+          "image_versions2": { "candidates": [] }
+        } } ] } }
+      ],
+      "page_info": { "end_cursor": "CURSOR_A", "has_next_page": true }
+    }
+  }
+}

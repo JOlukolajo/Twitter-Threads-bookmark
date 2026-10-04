@@ -1,0 +1,4 @@
+{ "data": { "bookmark_timeline_v2": { "timeline": { "instructions": [ { "type": "TimelineAddEntries", "entries": [
+  { "entryId": "cursor-top-2", "content": { "entryType": "TimelineTimelineCursor", "value": "T2", "cursorType": "Top" } },
+  { "entryId": "cursor-bottom-2", "content": { "entryType": "TimelineTimelineCursor", "value": "B2", "cursorType": "Bottom" } }
+] } ] } } } }

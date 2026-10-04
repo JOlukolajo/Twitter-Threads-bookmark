@@ -1,0 +1,16 @@
+{
+  "name": "saveboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "pnpm --filter @saveboard/extension dev",
+    "build": "pnpm --filter @saveboard/extension build",
+    "build:firefox": "pnpm --filter @saveboard/extension build:firefox",
+    "zip": "pnpm --filter @saveboard/extension zip:all",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "e2e": "pnpm --filter @saveboard/extension e2e"
+  }
+}

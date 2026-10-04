@@ -1,0 +1,83 @@
+{
+  "data": {
+    "bookmark_timeline_v2": {
+      "timeline": {
+        "instructions": [
+          {
+            "type": "TimelineAddEntries",
+            "entries": [
+              {
+                "entryId": "tweet-1850000000000000001",
+                "sortIndex": "1850000000000000999",
+                "content": {
+                  "entryType": "TimelineTimelineItem",
+                  "itemContent": {
+                    "itemType": "TimelineTweet",
+                    "tweet_results": {
+                      "result": {
+                        "__typename": "Tweet",
+                        "rest_id": "1850000000000000001",
+                        "core": { "user_results": { "result": {
+                          "__typename": "User", "rest_id": "44196397", "is_blue_verified": true,
+                          "core": { "name": "Ada Lovelace", "screen_name": "ada" },
+                          "avatar": { "image_url": "https://pbs.twimg.com/profile_images/1/a_normal.jpg" },
+                          "legacy": {}
+                        } } },
+                        "views": { "count": "1234" },
+                        "legacy": {
+                          "full_text": "Shipping &amp; learning https://t.co/abc https://t.co/media1",
+                          "created_at": "Sun Oct 27 10:00:00 +0000 2024",
+                          "favorite_count": 10, "retweet_count": 2, "reply_count": 1,
+                          "entities": { "urls": [{ "url": "https://t.co/abc", "expanded_url": "https://example.com/post" }] },
+                          "extended_entities": { "media": [
+                            { "type": "photo", "url": "https://t.co/media1", "media_url_https": "https://pbs.twimg.com/media/AAA.jpg", "original_info": { "width": 1200, "height": 800 } },
+                            { "type": "video", "url": "https://t.co/media1", "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1/pu/img/BBB.jpg",
+                              "video_info": { "variants": [
+                                { "content_type": "application/x-mpegURL", "url": "https://video.twimg.com/x.m3u8" },
+                                { "content_type": "video/mp4", "bitrate": 832000, "url": "https://video.twimg.com/low.mp4" },
+                                { "content_type": "video/mp4", "bitrate": 2176000, "url": "https://video.twimg.com/high.mp4" }
+                              ] } }
+                          ] }
+                        },
+                        "quoted_status_result": { "result": {
+                          "__typename": "Tweet", "rest_id": "1840000000000000000",
+                          "core": { "user_results": { "result": { "rest_id": "2", "legacy": { "name": "Grace", "screen_name": "grace", "profile_image_url_https": "https://pbs.twimg.com/profile_images/2/g_normal.jpg" } } } },
+                          "legacy": { "full_text": "Original thought", "entities": {} }
+                        } }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "entryId": "tweet-1849000000000000000",
+                "sortIndex": "1850000000000000500",
+                "content": {
+                  "entryType": "TimelineTimelineItem",
+                  "itemContent": { "tweet_results": { "result": {
+                    "__typename": "TweetWithVisibilityResults",
+                    "tweet": {
+                      "rest_id": "1849000000000000000",
+                      "core": { "user_results": { "result": { "rest_id": "3", "legacy": { "name": "Linus", "screen_name": "linus" } } } },
+                      "note_tweet": { "note_tweet_results": { "result": { "text": "A very long note tweet that goes past 280 characters." } } },
+                      "legacy": { "full_text": "A very long note tweet that…", "entities": {},
+                        "extended_entities": { "media": [ { "type": "animated_gif", "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/CCC.jpg",
+                          "video_info": { "variants": [ { "content_type": "video/mp4", "bitrate": 0, "url": "https://video.twimg.com/tweet_video/CCC.mp4" } ] } } ] } }
+                    }
+                  } } }
+                }
+              },
+              {
+                "entryId": "tweet-1848000000000000000",
+                "sortIndex": "1850000000000000100",
+                "content": { "entryType": "TimelineTimelineItem", "itemContent": { "tweet_results": { "result": { "__typename": "TweetTombstone" } } } }
+              },
+              { "entryId": "cursor-top-1", "sortIndex": "1850000000000001000", "content": { "entryType": "TimelineTimelineCursor", "value": "TOPCURSOR", "cursorType": "Top" } },
+              { "entryId": "cursor-bottom-1", "sortIndex": "1850000000000000001", "content": { "entryType": "TimelineTimelineCursor", "value": "BOTTOMCURSOR", "cursorType": "Bottom" } }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
