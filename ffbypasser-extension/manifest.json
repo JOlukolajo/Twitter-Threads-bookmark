@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "FFBypasser",
+  "version": "1.0.0",
+  "description": "Collect fuckingfast.co links from any page (FitGirl etc.) and resolve them to direct download URLs.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "FFBypasser",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "*://fuckingfast.co/*",
+    "*://*.fuckingfast.co/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://fuckingfast.co/*", "*://*.fuckingfast.co/*"],
+      "js": ["page-hook.js"],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["gm-shim.js", "ffbypasser.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

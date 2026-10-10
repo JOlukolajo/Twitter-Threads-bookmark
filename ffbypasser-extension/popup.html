@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FFBypasser</title>
+<style>
+    :root {
+        --bg: #070a12; --raised: #101725; --hover: #162032; --line: #1a2436; --line-2: #25324b;
+        --fg: #e9eefb; --fg-2: #93a1bd; --fg-3: #5d6b86; --accent: #3b82f6; --accent-3: #1d4ed8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        width: 260px; background: var(--bg); color: var(--fg);
+        font: 13px/1.5 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    header {
+        display: flex; align-items: center; gap: 9px; padding: 11px 12px;
+        background: linear-gradient(180deg, rgba(59,130,246,.1), transparent 90%);
+        border-bottom: 1px solid var(--line);
+    }
+    header img { width: 22px; height: 22px; }
+    header h1 { font-size: 13px; font-weight: 620; }
+    main { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+    button {
+        width: 100%; text-align: left; cursor: pointer; padding: 8px 11px; border-radius: 10px;
+        font: inherit; font-size: 12.5px; color: var(--fg);
+        background: var(--raised); border: 1px solid var(--line-2);
+    }
+    button:hover { background: var(--hover); border-color: var(--fg-3); }
+    button.primary {
+        color: #fff; font-weight: 600; border-color: rgba(122,167,255,.4);
+        background: linear-gradient(145deg, var(--accent), var(--accent-3));
+    }
+    p { font-size: 11.5px; color: var(--fg-2); }
+    footer { padding: 0 12px 11px; font-size: 10.5px; color: var(--fg-3); }
+    kbd { font: inherit; padding: 0 4px; border: 1px solid var(--line-2); border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+    <img src="icons/icon32.png" alt="">
+    <h1>FFBypasser</h1>
+</header>
+<main id="cmds"><p>Loading…</p></main>
+<footer>Shortcut on any page: <kbd>Alt</kbd>+<kbd>F</kbd></footer>
+<script src="popup.js"></script>
+</body>
+</html>
